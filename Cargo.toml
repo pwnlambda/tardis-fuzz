@@ -1,0 +1,34 @@
+[package]
+name = "tardis-fuzz"
+version = "0.1.0"
+edition = "2021"
+
+# Add symbols for flamegraph in release mode
+[profile.release]
+debug = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "4.1.4", features = ["derive"] }
+linux-loader = "0.8.1"
+vm-superio = "0.7.0"
+vm-memory = {version = "0.10.0", features=["backend-mmap"]}
+vm-device = "0.1.0"
+vm-allocator = "0.1.0"
+vm-fdt = "0.2.0"
+vmm-sys-util = "0.11.1"
+kvm-bindings = { version = "0.6.0", features = ["fam-wrappers"] }
+kvm-ioctls = "*"
+env_logger = "0.10.0"
+log = "0.4.0"
+libc = "0.2.139"
+
+event-manager = "0.3.0"
+serde = { version = "1.0.159", features = ["derive"] }
+serde_bytes = "0.11"
+rmp-serde = "1.1.1"
+vm-superio-ser = "0.3.0"
+r2pipe = "0.7.0"
+serde_json = "1.0.96"
+libafl = "0.10.0"
